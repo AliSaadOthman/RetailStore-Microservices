@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  productservice:
+    image: productservice
+    build:
+      context: ./src/ProductService
+    ports:
+      - "5001:80"
+
+  orderservice:
+    image: orderservice
+    build:
+      context: ./src/OrderService
+    ports:
+      - "5002:80"
+
+  customerservice:
+    image: customerservice
+    build:
+      context: ./src/CustomerService
+    ports:
+      - "5003:80"
+
+  inventoryservice:
+    image: inventoryservice
+    build:
+      context: ./src/InventoryService
+    ports:
+      - "5004:80"
+
+  paymentservice:
+    image: paymentservice
+    build:
+      context: ./src/PaymentService
+    ports:
+      - "5005:80"
+
+  apigateway:
+    image: apigateway
+    build:
+      context: ./src/APIGateway
+    ports:
+      - "5000:80"
